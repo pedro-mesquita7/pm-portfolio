@@ -9,7 +9,25 @@
     <meta property="og:title" content="Pedro Mesquita | Senior Data Engineer">
     <meta property="og:description" content="SAP data extraction, CDC pipelines and modern lakehouses. Open to B2B contracts.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pedro-mesquita7.github.io/pm-portfolio/">
     <meta property="og:image" content="https://pedro-mesquita7.github.io/pm-portfolio/assets/preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Pedro Mesquita, Senior Data Engineer: SAP data extraction, CDC pipelines and modern lakehouses. Open to B2B contracts.">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://pedro-mesquita7.github.io/pm-portfolio/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pedro Mesquita",
+        "jobTitle": "Senior Data Engineer",
+        "url": "https://pedro-mesquita7.github.io/pm-portfolio/",
+        "address": { "@type": "PostalAddress", "addressLocality": "Porto", "addressCountry": "PT" },
+        "sameAs": ["https://www.linkedin.com/in/pedro-mesquita/", "https://github.com/pedro-mesquita7"],
+        "knowsAbout": ["Data Engineering", "SAP data extraction", "Change Data Capture", "Apache Iceberg", "dbt", "Dagster", "AWS", "Databricks", "Talend"]
+    }
+    </script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%2306b6d4'/><stop offset='50%25' style='stop-color:%233b82f6'/><stop offset='100%25' style='stop-color:%238b5cf6'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='68' font-family='sans-serif' font-size='40' font-weight='bold' fill='black' text-anchor='middle'>PM</text></svg>">
     <title>Pedro Mesquita | Senior Data Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +42,7 @@
             --bg4: #18181c;
             --text: #f4f4f5;
             --dim: #a1a1aa;
-            --muted: #71717a;
+            --muted: #8b8b94;
             --accent: #06b6d4;
             --accent2: #22d3ee;
             --accent-glow: rgba(6, 182, 212, 0.15);
@@ -281,6 +299,7 @@
         .terminal-dot:nth-child(2) { background: #f59e0b; }
         .terminal-dot:nth-child(3) { background: #22c55e; }
         .code-block {
+            text-align: left;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.7rem;
             line-height: 1.7;
@@ -743,19 +762,103 @@
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+        .service-card {
+            background: linear-gradient(145deg, var(--bg3), var(--bg2));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.25s, transform 0.25s;
+        }
+        .service-card:hover { border-color: rgba(6, 182, 212, 0.3); transform: translateY(-3px); }
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--accent-glow);
+            border: 1px solid rgba(6, 182, 212, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent2);
+            margin-bottom: 1rem;
+        }
+        .service-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .service-card p { font-size: 0.82rem; color: var(--dim); line-height: 1.6; flex-grow: 1; }
+        .service-proof {
+            margin-top: 1rem;
+            padding-top: 0.85rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.72rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+        .service-proof a { color: var(--accent); }
+        .service-proof a:hover { text-decoration: underline; }
+        .work-facts {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 2.25rem;
+        }
+        .work-fact {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.78rem;
+            color: var(--dim);
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 0.45rem 0.95rem;
+        }
+        .work-fact i { color: var(--accent); font-size: 0.75rem; }
+        @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 640px) { .services-grid { grid-template-columns: 1fr; } }
+
+        /* Keyboard accessibility */
+        .skip-link {
+            position: absolute;
+            left: 1rem;
+            top: -3rem;
+            z-index: 200;
+            background: var(--accent);
+            color: #000;
+            font-weight: 600;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            transition: top 0.2s;
+        }
+        .skip-link:focus { top: 1rem; }
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--accent2);
+            outline-offset: 3px;
+            border-radius: 6px;
+        }
     </style>
 </head>
 <body>
 
-<div class="gradient-bg"></div>
-<div class="grid-pattern"></div>
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="gradient-bg" aria-hidden="true"></div>
+<div class="grid-pattern" aria-hidden="true"></div>
 
-<nav>
+<nav aria-label="Main">
     <div class="wrap">
-        <a href="#" class="logo"><span class="logo-icon">PM</span></a>
-        <button class="menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
-        <div class="nav-links">
+        <a href="#" class="logo" aria-label="Pedro Mesquita, back to top"><span class="logo-icon">PM</span></a>
+        <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><i class="fas fa-bars"></i></button>
+        <div class="nav-links" id="nav-links">
             <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">About</a>
+            <a href="#services">Services</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#contact" class="nav-cta">Contact</a>
@@ -763,6 +866,7 @@
     </div>
 </nav>
 
+<main id="main">
 <section class="hero">
     <div class="wrap">
         <div class="hero-text">
@@ -778,6 +882,7 @@
             <div class="hero-btns">
                 <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
                 <a href="https://www.linkedin.com/in/pedro-mesquita/" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                <a href="https://github.com/pedro-mesquita7" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub</a>
             </div>
             <div class="hero-metrics">
                 <div class="metric">
@@ -816,34 +921,75 @@
     </div>
 </section>
 
+<section id="services">
+    <div class="wrap">
+        <div class="section-header">
+            <div class="section-tag"><i class="fas fa-handshake"></i> B2B</div>
+            <h2 class="section-title">How I Can Help</h2>
+            <p class="section-subtitle">Each service is backed by a project below.</p>
+        </div>
+        <div class="services-grid">
+            <article class="service-card fade-up">
+                <div class="service-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
+                <h3>SAP Data Extraction &amp; CDC</h3>
+                <p>Incremental, change-data-capture loads from SAP ECC / S/4HANA into your lake or warehouse. SAP's quirks (padded keys, currency decimals, empty dates) are handled properly, so the numbers reconcile.</p>
+                <div class="service-proof">Proof: <a href="#project-sap-lakehouse">SAP → Iceberg Lakehouse</a>, <a href="#project-sap-data-lake">SAP-to-Data Lake</a></div>
+            </article>
+            <article class="service-card fade-up delay-1">
+                <div class="service-icon"><i class="fas fa-piggy-bank" aria-hidden="true"></i></div>
+                <h3>Legacy ETL Migration</h3>
+                <p>Move licensed ETL such as Talend onto cloud-native, pay-per-use pipelines without disrupting the jobs the business depends on.</p>
+                <div class="service-proof">Proof: <a href="#project-talend-aws">Talend → AWS Migration</a></div>
+            </article>
+            <article class="service-card fade-up delay-2">
+                <div class="service-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
+                <h3>Lakehouse &amp; Pipeline Builds</h3>
+                <p>Medallion lakehouses on AWS, Databricks or Apache Iceberg, with dbt models, orchestration, infrastructure as code and CI/CD from day one.</p>
+                <div class="service-proof">Proof: <a href="#project-ironlog">IronLog</a>, <a href="#project-openclaw">OpenClaw Lakehouse</a></div>
+            </article>
+            <article class="service-card fade-up delay-3">
+                <div class="service-icon"><i class="fas fa-heartbeat" aria-hidden="true"></i></div>
+                <h3>Monitoring &amp; Data Quality</h3>
+                <p>Tests, contracts, reconciliations and self-service monitoring, so teams catch failures before their users do.</p>
+                <div class="service-proof">Proof: <a href="#project-talend-monitoring">Talend Monitoring Dashboard</a>, <a href="#project-sap-lakehouse">SAP lakehouse test suite</a></div>
+            </article>
+        </div>
+        <div class="work-facts">
+            <span class="work-fact"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Based in Porto, Portugal</span>
+            <span class="work-fact"><i class="fas fa-globe-europe" aria-hidden="true"></i> Remote, EU time zone</span>
+            <span class="work-fact"><i class="fas fa-file-signature" aria-hidden="true"></i> B2B / contract</span>
+        </div>
+    </div>
+</section>
+
 <section id="projects" class="projects-section">
     <div class="wrap">
         <div class="section-header">
             <div class="section-tag"><i class="fas fa-code-branch"></i> Portfolio</div>
             <div class="section-title-row">
                 <h2 class="section-title">Featured Projects</h2>
-                <div class="segmented-control">
-                    <button class="segment" data-filter="work">Work</button>
-                    <button class="segment active" data-filter="all">All</button>
-                    <button class="segment" data-filter="personal">Personal</button>
+                <div class="segmented-control" role="group" aria-label="Filter projects">
+                    <button class="segment" data-filter="work" aria-pressed="false">Work</button>
+                    <button class="segment active" data-filter="all" aria-pressed="true">All</button>
+                    <button class="segment" data-filter="personal" aria-pressed="false">Personal</button>
                 </div>
             </div>
         </div>
         
         <div class="projects-grid">
-            <article class="project-card project-featured fade-up" data-type="personal">
+            <article class="project-card project-featured fade-up" data-type="personal" id="project-sap-lakehouse">
                 <div class="featured-main">
                     <div class="project-header">
                         <div class="project-icon"><i class="fas fa-layer-group"></i></div>
                         <span class="project-label label-personal">Personal</span>
                         <span class="project-label label-new">New</span>
                         <div class="project-links">
-                            <a href="https://pedro-mesquita7.github.io/sap-iceberg-lakehouse/" target="_blank" rel="noopener" class="project-link" title="Live dbt docs"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="https://github.com/pedro-mesquita7/sap-iceberg-lakehouse" target="_blank" rel="noopener" class="project-link" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://pedro-mesquita7.github.io/sap-iceberg-lakehouse/" target="_blank" rel="noopener" class="project-link" title="Live dbt docs" aria-label="SAP Iceberg Lakehouse live dbt docs"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/pedro-mesquita7/sap-iceberg-lakehouse" target="_blank" rel="noopener" class="project-link" title="GitHub" aria-label="SAP Iceberg Lakehouse on GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <h3 class="project-title">SAP → Iceberg Lakehouse</h3>
-                    <p class="project-desc">SAP Order-to-Cash data (sales orders, deliveries, billing) extracted with change data capture into Apache Iceberg, modelled with dbt and orchestrated by Dagster. It's a public, runnable version of the SAP extraction patterns I use at work, and one command builds it on a laptop.</p>
+                    <p class="project-desc">SAP Order-to-Cash data (sales orders, deliveries, billing) extracted with change data capture into Apache Iceberg, modelled with dbt and orchestrated by Dagster. Built from scratch on public tools and simulated SAP data, so anyone can run the whole thing with one command.</p>
                     <div class="project-tags">
                         <span class="tag">Iceberg</span><span class="tag">dbt</span><span class="tag">Dagster</span><span class="tag">DuckDB</span><span class="tag">PyIceberg</span><span class="tag">GitHub Actions</span>
                     </div>
@@ -856,29 +1002,25 @@
                 </ul>
             </article>
 
-            <article class="project-card fade-up" data-type="personal">
+            <article class="project-card fade-up" data-type="personal" id="project-ironlog">
                 <div class="project-header">
                     <div class="project-icon"><i class="fas fa-dumbbell"></i></div>
                     <span class="project-label label-personal">Personal</span>
-                    <span class="project-label label-new">Live</span>
-                    <div class="project-links">
-                        <a href="https://pedro-mesquita7.github.io/IronLog/" target="_blank" rel="noopener" class="project-link" title="Live app"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="https://github.com/pedro-mesquita7/IronLog" target="_blank" rel="noopener" class="project-link" title="GitHub"><i class="fab fa-github"></i></a>
-                    </div>
+                    <a href="https://github.com/pedro-mesquita7/IronLog" target="_blank" rel="noopener" class="project-link" title="GitHub" aria-label="IronLog on GitHub"><i class="fab fa-github"></i></a>
                 </div>
                 <h3 class="project-title">IronLog</h3>
                 <p class="project-desc">A mobile-first gym tracker PWA with a serverless CDC data lake behind it. DynamoDB Streams feed S3 medallion layers, dbt on Athena does the transforms, and WHOOP recovery data syncs daily. All infrastructure is in Terraform.</p>
-                <div class="project-impact"><span>Impact:</span> Runs in production for ~€0.07/month • 13 Lambdas • 3 CI/CD workflows</div>
+                <div class="project-impact"><span>Impact:</span> Designed to run for ~€0.07/month • 13 Lambdas • 3 CI/CD workflows</div>
                 <div class="project-tags">
                     <span class="tag">AWS Lambda</span><span class="tag">DynamoDB Streams</span><span class="tag">dbt + Athena</span><span class="tag">Terraform</span>
                 </div>
             </article>
 
-            <article class="project-card fade-up delay-1" data-type="personal">
+            <article class="project-card fade-up delay-1" data-type="personal" id="project-openclaw">
                 <div class="project-header">
                     <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
                     <span class="project-label label-personal">Personal</span>
-                    <a href="https://github.com/pedro-mesquita7/openclaw-security-lakehouse" target="_blank" rel="noopener" class="project-link" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/pedro-mesquita7/openclaw-security-lakehouse" target="_blank" rel="noopener" class="project-link" title="GitHub" aria-label="OpenClaw Security Lakehouse on GitHub"><i class="fab fa-github"></i></a>
                 </div>
                 <h3 class="project-title">OpenClaw Security Lakehouse</h3>
                 <p class="project-desc">Security analytics for the OpenClaw AI-agent ecosystem. GitHub and NVD data land daily in a Delta Lake medallion architecture, with SCD Type 2 package history, risk scoring and a Databricks SQL dashboard.</p>
@@ -888,21 +1030,21 @@
                 </div>
             </article>
 
-            <article class="project-card fade-up delay-2" data-type="work">
+            <article class="project-card fade-up delay-2" data-type="work" id="project-talend-aws">
                 <div class="project-header">
                     <div class="project-icon"><i class="fas fa-piggy-bank"></i></div>
                     <span class="project-label label-work">Work</span>
-                    <span class="project-private"><i class="fas fa-lock"></i> Private</span>
+                    <span class="project-label label-wip">In progress</span>
                 </div>
                 <h3 class="project-title">Talend → AWS Migration</h3>
-                <p class="project-desc">Moved licensed Talend ETL workloads to a cloud-native AWS stack. The same pipelines keep running without the enterprise licence.</p>
-                <div class="project-impact"><span>Impact:</span> ~€60k in licensing replaced by ~€150/month of run cost</div>
+                <p class="project-desc">Leading the move of licensed Talend ETL workloads to a cloud-native AWS stack, so the same pipelines run without the enterprise licence. A write-up will follow once it ships.</p>
+                <div class="project-impact"><span>Target:</span> ~€60k in licensing down to ~€150/month of run cost</div>
                 <div class="project-tags">
                     <span class="tag">Talend</span><span class="tag">AWS</span><span class="tag">Migration</span>
                 </div>
             </article>
 
-            <article class="project-card fade-up delay-3" data-type="work">
+            <article class="project-card fade-up delay-3" data-type="work" id="project-sap-data-lake">
                 <div class="project-header">
                     <div class="project-icon"><i class="fas fa-database"></i></div>
                     <span class="project-label label-work">Work</span>
@@ -916,7 +1058,7 @@
                 </div>
             </article>
 
-            <article class="project-card fade-up delay-4" data-type="work">
+            <article class="project-card fade-up delay-4" data-type="work" id="project-talend-monitoring">
                 <div class="project-header">
                     <div class="project-icon"><i class="fas fa-tachometer-alt"></i></div>
                     <span class="project-label label-work">Work</span>
@@ -1028,6 +1170,7 @@
         </div>
     </div>
 </section>
+</main>
 
 <footer>
     <div class="wrap">
@@ -1051,20 +1194,26 @@
     const navLinks = document.querySelector('.nav-links');
     menuBtn.addEventListener('click', () => {
         const isOpen = navLinks.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
         menuBtn.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
     document.querySelectorAll('.nav-links a').forEach(a => {
         a.addEventListener('click', () => {
             navLinks.classList.remove('open');
+            menuBtn.setAttribute('aria-expanded', 'false');
             menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
         });
     });
 
-    // Smooth scroll
+    // Smooth scroll (href="#" alone means "top", handled by its own onclick)
     document.querySelectorAll('a[href^="#"]').forEach(a => {
+        const target = a.getAttribute('href');
+        if (target.length < 2) return;
         a.addEventListener('click', e => {
             e.preventDefault();
-            document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+            // Proof links point at project cards: make sure the filter isn't hiding them
+            if (target.startsWith('#project-')) applyFilter('all');
+            document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
@@ -1094,21 +1243,17 @@
     const segments = document.querySelectorAll('.segment');
     const projectCards = document.querySelectorAll('.project-card');
     
-    segments.forEach(btn => {
-        btn.addEventListener('click', () => {
-            segments.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            const filter = btn.dataset.filter;
-            projectCards.forEach(card => {
-                if (filter === 'all' || card.dataset.type === filter) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
+    function applyFilter(filter) {
+        segments.forEach(b => {
+            const active = b.dataset.filter === filter;
+            b.classList.toggle('active', active);
+            b.setAttribute('aria-pressed', String(active));
         });
-    });
+        projectCards.forEach(card => {
+            card.classList.toggle('hidden', filter !== 'all' && card.dataset.type !== filter);
+        });
+    }
+    segments.forEach(btn => btn.addEventListener('click', () => applyFilter(btn.dataset.filter)));
 
     // Active nav section highlight
     const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
